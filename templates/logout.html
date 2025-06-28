@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logout</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+</head>
+<body>
+  <header>
+    <h1>Logging Out...</h1>
+  </header>
+
+  <main class="content">
+    <section class="card">
+      <h2>Thank you for using the Library Management System!</h2>
+      <p>You are being logged out. Please wait...</p>
+    </section>
+  </main>
+
+  <script>
+    // Simulate logout action
+    setTimeout(function() {
+      window.location.href = "login.html"; // Redirect to the login page after logout
+    }, 2000); // Redirect after 2 seconds
+  </script>
+</body>
+</html>

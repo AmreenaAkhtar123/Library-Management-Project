@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Borrow / Return Books</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+</head>
+<body>
+  <header>
+    <h1>Borrow / Return Books</h1>
+  </header>
+
+  <nav class="sidebar">
+    <ul>
+      <li><a href="/dashboard" >  Dashboard</a></li>
+      <li><a href="/manage-books">Manage Books</a></li>
+      <li><a href="/register">Manage Members</a></li>
+      <li><a href="/" class="active">Borrow/Return</a></li>
+      <li><a href="/reports">Reports</a></li>
+      <li><a href="/logout">Logout</a></li>
+
+    </ul>
+  </nav>
+
+<main class="content">
+  {% if message %}
+    <div class="card">
+      <strong>{{ message }}</strong>
+    </div>
+  {% endif %}
+
+  <section class="card">
+    <h2>Borrow Book</h2>
+    <form action="/borrow-return" method="POST">
+      <input type="hidden" name="form_type" value="borrow">
+      <label>Member ID:</label><br>
+      <input type="number" name="member_id" required><br>
+
+      <label>Book ID:</label><br>
+      <input type="number" name="book_id" required><br>
+
+      <br><button type="submit">Issue Book</button>
+    </form>
+  </section>
+
+  <section class="card">
+    <h2>Return Book</h2>
+    <form action="/borrow-return" method="POST">
+      <input type="hidden" name="form_type" value="return">
+      <label>Borrow ID:</label><br>
+      <input type="number" name="borrow_id" required><br>
+
+      <label>Return Date:</label><br>
+      <input type="date" name="return_date" required><br>
+
+      <br><button type="submit">Return Book</button>
+    </form>
+  </section>
+</main>

@@ -1,0 +1,58 @@
+<!-- templates/Reports.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Borrowing Reports</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <header>
+    <h1>Borrowing Reports</h1>
+  </header>
+
+  <nav class="sidebar">
+    <ul>
+      <li><a href="/">Dashboard</a></li>
+      <li><a href="/manage-books">Manage Books</a></li>
+      <li><a href="/register">Manage Members</a></li>
+      <li><a href="/borrow-return">Borrow/Return</a></li>
+      <li><a href="/reports" class="active">Reports</a></li>
+      <li><a href="/logout">Logout</a></li>
+
+    </ul>
+  </nav>
+
+  <main class="content">
+    <section class="card">
+      <h2>All Borrowing Records</h2>
+      <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Borrow ID</th>
+            <th>Member Name</th>
+            <th>Book Title</th>
+            <th>Borrow Date</th>
+            <th>Return Date</th>
+            <th>Fine</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for r in records %}
+          <tr>
+            <td>{{ r[0] }}</td>  <!-- Borrowing ID -->
+            <td>{{ r[1] }}</td>  <!-- Member Name -->
+            <td>{{ r[2] }}</td>  <!-- Book Title -->
+            <td>{{ r[3] }}</td>  <!-- Borrow Date -->
+            <td>{{ r[4] if r[4] else 'Not returned' }}</td>  <!-- Return Date -->
+            <td>{{ r[5] }}</td>  <!-- Fine -->
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Library Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <header>
+    <h1>Library Admin Dashboard</h1>
+  </header>
+
+  <nav class="sidebar">
+    <ul>
+      <li><a href="/" class="active">Dashboard</a></li>
+      <li><a href="/manage-books">Manage Books</a></li>
+      <li><a href="/register">Manage Members</a></li>
+      <li><a href="/borrow-return">Borrow/Return</a></li>
+      <li><a href="/reports">Reports</a></li>
+      <li><a href="/logout">Logout</a></li>
+
+    </ul>
+  </nav>
+
+  <main class="content">
+    <section class="card">
+      <h2>Books Summary</h2>
+      <p><strong>Total Books:</strong> {{ total_books }}</p>
+      <p><strong>Currently Borrowed:</strong> {{ books_borrowed }}</p>
+    </section>
+
+    <section class="card">
+      <h2>Members Summary</h2>
+      <p><strong>Registered Members:</strong> {{ total_members }}</p>
+      <p><strong>Books Issued Today:</strong> {{ books_today }}</p>
+    </section>
+  </main>
+</body>
+</html>

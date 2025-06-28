@@ -1,0 +1,152 @@
+/* === Base Styles === */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #DFD0B8;
+  color: #222831;
+  min-height: 100vh;
+  overflow-x: hidden;  /* ✅ prevents horizontal scroll bar */
+}
+
+/* === Header === */
+header {
+  background-color: #222831;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* === Sidebar === */
+.sidebar {
+  background-color: #393E46;
+  width: 200px;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  padding-top: 1rem;
+  overflow-y: auto;
+  border-right: 1px solid #ccc;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin: 0;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background-color: #948979;
+  color: #222831;
+  font-weight: bold;
+}
+
+/* === Main Content === */
+.content {
+  margin-left: 220px;  /* ✅ Match sidebar width */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* === Cards === */
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #222831;
+}
+
+/* === Tables === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+table th, table td {
+  padding: 0.75rem;
+  text-align: left;
+}
+
+table th {
+  background-color: #393E46;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #DFD0B8;
+}
+
+table tr:hover {
+  background-color: #948979;
+  color: white;
+}
+
+/* === Forms === */
+input, select, textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+}
+
+button {
+  background-color: #222831;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #948979;
+  color: #fff;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    top: 0;
+  }
+
+  .content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
